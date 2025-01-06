@@ -2,6 +2,7 @@
 agp = "8.7.3"
 appcompat = "1.6.1"
 comGoogleAndroidGmsPlayServicesAuth = "20.7.0"
+dotsindicator = "4.2"
 firebaseAuthKtx = "23.1.0"
 firebaseBom = "33.7.0"
 googlePlayServicesAuth = "20.5.0"
@@ -21,10 +22,13 @@ playServicesAuth = "21.3.0"
 firebaseAuth = "23.1.0"
 playServicesAuthVersion = "20.4.0"
 ui = "1.7.6"
+viewpager = "1.1.0"
 
 [libraries]
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-viewpager = { module = "androidx.viewpager:viewpager", version.ref = "viewpager" }
+dotsindicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsindicator" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
