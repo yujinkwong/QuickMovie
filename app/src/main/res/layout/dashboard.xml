@@ -35,12 +35,6 @@
     </LinearLayout>
 
     <!-- Carousel Section -->
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/carouselViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginBottom="16dp"
-        android:contentDescription="@string/carousel" />
 
     <!-- Dots Indicator for ViewPager -->
     <com.tbuonomo.viewpagerdotsindicator.DotsIndicator

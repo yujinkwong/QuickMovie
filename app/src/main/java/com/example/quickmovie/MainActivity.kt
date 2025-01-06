@@ -1,3 +1,4 @@
+// MainActivity.kt
 package com.example.quickmovie
 
 import android.content.Intent
@@ -65,7 +66,6 @@ class MainActivity : ComponentActivity() {
         googleSignInLauncher.launch(signInIntent)
     }
 
-    // Inside MainActivity, after a successful login, you can use an Intent to navigate to DashboardActivity.
     private fun firebaseAuthWithGoogle(account: GoogleSignInAccount?) {
         val credential = GoogleAuthProvider.getCredential(account?.idToken, null)
         firebaseAuth.signInWithCredential(credential)
@@ -85,7 +85,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
     }
-
 }
 
 @Composable

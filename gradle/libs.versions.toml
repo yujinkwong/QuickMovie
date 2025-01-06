@@ -2,6 +2,7 @@
 agp = "8.7.3"
 appcompat = "1.6.1"
 comGoogleAndroidGmsPlayServicesAuth = "20.7.0"
+comGoogleAndroidGmsPlayServicesAuth2 = "20.6.0"
 dotsindicator = "4.2"
 firebaseAuthKtx = "23.1.0"
 firebaseBom = "33.7.0"
@@ -53,6 +54,7 @@ firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version
 play-services-auth-v2020 = { module = "com.google.android.gms:play-services-auth", version.ref = "googlePlayServicesAuthVersion" }
 play-services-auth-v2040 = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuthVersion" }
 play-services-auth-v2050 = { module = "com.google.android.gms:play-services-auth", version.ref = "googlePlayServicesAuth" }
+play-services-auth-v2060 = { module = "com.google.android.gms:play-services-auth", version.ref = "comGoogleAndroidGmsPlayServicesAuth2" }
 play-services-auth-v2070 = { module = "com.google.android.gms:play-services-auth", version.ref = "comGoogleAndroidGmsPlayServicesAuth" }
 ui = { module = "androidx.compose.ui:ui", version.ref = "ui" }
 
