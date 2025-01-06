@@ -65,6 +65,7 @@ class MainActivity : ComponentActivity() {
         googleSignInLauncher.launch(signInIntent)
     }
 
+    // Inside MainActivity, after a successful login, you can use an Intent to navigate to DashboardActivity.
     private fun firebaseAuthWithGoogle(account: GoogleSignInAccount?) {
         val credential = GoogleAuthProvider.getCredential(account?.idToken, null)
         firebaseAuth.signInWithCredential(credential)
@@ -74,16 +75,17 @@ class MainActivity : ComponentActivity() {
                     Toast.makeText(this, "Sign-In Successful: ${user?.email}", Toast.LENGTH_SHORT).show()
                     Log.d("MainActivity", "Firebase Sign-In successful: ${user?.email}")
 
-                    // Navigate to HomeActivity
-                    val intent = Intent(this, HomeActivity::class.java)
+                    // After successful sign-in, navigate to DashboardActivity
+                    val intent = Intent(this, DashboardActivity::class.java)
                     startActivity(intent)
-                    finish() // Close MainActivity
+                    finish() // Close MainActivity to prevent going back
                 } else {
                     Toast.makeText(this, "Sign-In Failed", Toast.LENGTH_SHORT).show()
                     Log.e("MainActivity", "Firebase Sign-In failed", task.exception)
                 }
             }
     }
+
 }
 
 @Composable

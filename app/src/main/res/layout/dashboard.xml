@@ -42,6 +42,14 @@
         android:layout_marginBottom="16dp"
         android:contentDescription="@string/carousel" />
 
+    <!-- Dots Indicator for ViewPager -->
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dotsIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp" />
+
     <!-- Now Showing Section -->
     <TextView
         android:layout_width="match_parent"
@@ -120,7 +128,7 @@
                 <ImageView
                     android:layout_width="150dp"
                     android:layout_height="120dp"
-                    android:src="@drawable/Sonic3"
+                    android:src="@drawable/sonic3"
                     android:scaleType="fitXY"
                     android:contentDescription="Movie 2 Poster" />
 
