@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "292439689775",
+    "project_id": "quickmovie-490e5",
+    "storage_bucket": "quickmovie-490e5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292439689775:android:b08e6283f70e1244cb94da",
+        "android_client_info": {
+          "package_name": "com.example.quickmovie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292439689775-av2l9dshk4j32juium173g37nuq8jg9p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.quickmovie",
+            "certificate_hash": "0053e920491aa76dcfb991a312dd14a66ae539a2"
+          }
+        },
+        {
+          "client_id": "292439689775-3givuej1sv9s4map6e1qt0vsuko91n0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlOInYrUd33HPHiQhzeKTk1NEpVNKD418"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292439689775-3givuej1sv9s4map6e1qt0vsuko91n0q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
