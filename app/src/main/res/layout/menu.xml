@@ -28,6 +28,14 @@
 
     <!-- Profile Button -->
     <Button
+        android:id="@+id/menu_Detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detail"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Profile Button -->
+    <Button
         android:id="@+id/menu_Seat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
