@@ -36,10 +36,10 @@
 
     <!-- Settings Button -->
     <Button
-        android:id="@+id/menu_Setting"
+        android:id="@+id/menu_AboutUs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Settings"
+        android:text="About Us"
         android:layout_marginBottom="16dp" />
 
 </LinearLayout>
