@@ -24,7 +24,7 @@
 
             <!-- Menu Icon -->
             <ImageButton
-                android:id="@+id/menubarprofile"
+                android:id="@+id/menubaraboutus"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/menubar"
@@ -107,7 +107,7 @@
             <!-- Facebook Button -->
             <ImageButton
                 android:id="@+id/socialmedia"
-                android:layout_width="80dp"
+                android:layout_width="150dp"
                 android:layout_height="80dp"
                 android:src="@drawable/fb"
                 android:scaleType="fitXY"
