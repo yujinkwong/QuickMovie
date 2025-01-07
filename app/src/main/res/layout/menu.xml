@@ -28,10 +28,10 @@
 
     <!-- Profile Button -->
     <Button
-        android:id="@+id/menu_Profile"
+        android:id="@+id/menu_Seat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profile"
+        android:text="Seat"
         android:layout_marginBottom="16dp" />
 
     <!-- Profile Button -->

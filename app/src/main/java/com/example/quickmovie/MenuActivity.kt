@@ -21,7 +21,7 @@ class MenuActivity : ComponentActivity() {
         }
 
         // Navigate to SeatSelectionActivity (Profile)
-        findViewById<Button>(R.id.menu_Profile).setOnClickListener {
+        findViewById<Button>(R.id.menu_Seat).setOnClickListener {
             val intent = Intent(this, SeatSelectionActivity::class.java)
             startActivity(intent)
         }
