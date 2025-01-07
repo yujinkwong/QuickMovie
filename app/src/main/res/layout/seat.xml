@@ -23,15 +23,7 @@
                 android:background="#D3D3D3"
                 android:padding="8dp">
 
-                <!-- Menu Icon -->
-                <ImageButton
-                    android:id="@+id/menubarfood"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/back"
-                    android:scaleType="fitXY"
-                    android:contentDescription="Menu Icon"
-                    android:layout_gravity="center_vertical" />
+
 
                 <!-- Title -->
                 <TextView

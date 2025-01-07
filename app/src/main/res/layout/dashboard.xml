@@ -46,7 +46,7 @@
         <!-- ViewPager2 for Image Carousel -->
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"
-            android:layout_width="400dp"
+            android:layout_width="430dp"
             android:layout_height="200dp"
             tools:ignore="MissingConstraints" />
 

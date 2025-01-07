@@ -1,5 +1,6 @@
 package com.example.quickmovie
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -7,26 +8,33 @@ import androidx.activity.ComponentActivity
 
 class MenuActivity : ComponentActivity() {
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.menu)
 
-        // Functionality for menu_Home to navigate back to DashboardActivity
+        // Navigate to DashboardActivity
         findViewById<Button>(R.id.menu_Home).setOnClickListener {
             val intent = Intent(this, DashboardActivity::class.java)
             startActivity(intent)
-            finish() // Closes MenuActivity to prevent going back to it on pressing back
+            finish() // Close MenuActivity to prevent going back to it
         }
 
-        // Functionality for menu_Profile to navigate to the SeatActivity
+        // Navigate to SeatSelectionActivity (Profile)
         findViewById<Button>(R.id.menu_Profile).setOnClickListener {
             val intent = Intent(this, SeatSelectionActivity::class.java)
             startActivity(intent)
         }
 
-        // menu_Setting has no functionality
+        // Navigate to AboutUsActivity
         findViewById<Button>(R.id.menu_AboutUs).setOnClickListener {
             val intent = Intent(this, AboutUsActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Navigate to FoodActivity
+        findViewById<Button>(R.id.menu_Food).setOnClickListener {
+            val intent = Intent(this, FoodActivity::class.java)
             startActivity(intent)
         }
     }
