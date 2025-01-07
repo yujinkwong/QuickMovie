@@ -4,12 +4,12 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.ComponentActivity
 
-class AboutUsActivity : AppCompatActivity() { // Change class name to AboutusActivity
+class AboutUsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.aboutus)
+        setContentView(R.layout.aboutus) // Loads the seat.xml layout
     }
 
     // Method to open Facebook page when Facebook button is clicked

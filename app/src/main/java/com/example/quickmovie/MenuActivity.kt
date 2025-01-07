@@ -24,11 +24,10 @@ class MenuActivity : ComponentActivity() {
             startActivity(intent)
         }
 
-        // Functionality for menu_Profile to navigate to the SeatActivity
+        // menu_Setting has no functionality
         findViewById<Button>(R.id.menu_AboutUs).setOnClickListener {
             val intent = Intent(this, AboutUsActivity::class.java)
             startActivity(intent)
         }
-
     }
 }
