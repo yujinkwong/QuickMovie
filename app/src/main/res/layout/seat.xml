@@ -87,7 +87,7 @@
                     android:id="@+id/seatDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Seat: (xx)"
+                    android:text="1 Seat: RM xx"
                     android:textSize="14sp"
                     android:textStyle="italic"
                     android:textColor="#333333" />

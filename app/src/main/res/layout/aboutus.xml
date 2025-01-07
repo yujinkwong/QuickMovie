@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Vertical LinearLayout to arrange elements in a column -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Topbar Profile Section -->
+        <LinearLayout
+            android:id="@+id/topbarprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#D3D3D3"
+            android:padding="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Menu Icon -->
+            <ImageButton
+                android:id="@+id/menubarprofile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/menubar"
+                android:scaleType="fitXY"
+                android:contentDescription="Menu Icon"
+                android:layout_gravity="center_vertical" />
+
+            <!-- Profile Title -->
+            <TextView
+                android:id="@+id/aboutus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ABOUT US"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Overview Section -->
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_app_logo" />
+
+        <TextView
+            android:id="@+id/overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Overview"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <!-- Content Section -->
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quick Movie is a cutting-edge platform that will revolutionize the way movie enthusiasts book their cinema tickets. Quick Movie is designed for speed, convenience, and ease of use, allowing users to connect with their favorite theaters and shows in just a few taps. Our mission is to enhance the joy of moviegoing by making the ticketing process fast, easy, and stress-free."
+            android:textSize="18sp"
+            android:layout_marginTop="12dp"
+            android:lineSpacingExtra="4dp"
+            android:justificationMode="inter_word" />
+
+        <!-- Slogan Section -->
+        <TextView
+            android:id="@+id/slogan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Join the Quick Movie community and make your movie-going experience smoother, faster, and more enjoyable!"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:gravity="center" />
+
+        <!-- Contact Information Section -->
+        <TextView
+            android:id="@+id/contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Information\nWebsite: www.quickmovie.com\nEmail: support@quickmovie.com\nPhone: +1-800-QUICK-MV\nSocial Media:"
+            android:textSize="16sp"
+            android:layout_marginTop="25dp"
+            android:lineSpacingExtra="4dp" />
+
+        <!-- Social Media Buttons Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+            <!-- Facebook Button -->
+            <ImageButton
+                android:id="@+id/socialmedia"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/fb"
+                android:scaleType="fitXY"
+                android:background="@null"
+                android:contentDescription="Facebook"
+                android:onClick="openFacebook" /> <!-- Add onClick attribute -->
+
+            <ImageButton
+                android:id="@+id/socialmedia2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/insta"
+                android:scaleType="fitXY"
+                android:background="@null"
+                android:contentDescription="Instagram"
+                android:onClick="openInstagram" /> <!-- Add onClick attribute -->
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
