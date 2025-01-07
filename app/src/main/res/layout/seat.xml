@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#D3D3D3"
+                android:padding="8dp">
+
+                <!-- Menu Icon -->
+                <ImageButton
+                    android:id="@+id/menubarfood"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/back"
+                    android:scaleType="fitXY"
+                    android:contentDescription="Menu Icon"
+                    android:layout_gravity="center_vertical" />
+
+                <!-- Title -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SELECT SEAT"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <!-- Movie Section -->
+            <ImageView
+                android:id="@+id/moviePoster"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/venomposter"
+                android:scaleType="centerCrop"
+                android:contentDescription="Movie Poster" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="#E3E3E3">
+
+                <!-- Movie Name -->
+                <TextView
+                    android:id="@+id/movieName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Movie Name"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="4dp"
+                    android:textColor="#000000" />
+
+                <!-- Movie Details -->
+                <TextView
+                    android:id="@+id/movieDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="age | type | duration | language"
+                    android:textSize="14sp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#333333" />
+
+                <!-- Seat -->
+                <TextView
+                    android:id="@+id/seatDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seat: (xx)"
+                    android:textSize="14sp"
+                    android:textStyle="italic"
+                    android:textColor="#333333" />
+            </LinearLayout>
+
+            <!-- Seat Legend -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Available"
+                    android:textColor="#008000"
+                    android:paddingEnd="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sold Out"
+                    android:textColor="#FF0000" />
+            </LinearLayout>
+
+            <!-- Big Screen -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Big Screen"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:background="#E3E3E3"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="#000000" />
+
+            <!-- Seat Layout -->
+            <!-- Selected Seats and Total -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <GridLayout
+                    android:id="@+id/seatLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:columnCount="5"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                    <!-- Repeat this block for each seat -->
+                    <Button
+                        android:id="@+id/A1"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp"
+                        android:background="#008000"
+                        android:text="A1"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+
+                    <!-- Add more seats buttons here -->
+                    <Button
+                        android:id="@+id/A2"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp"
+                        android:background="#008000"
+                        android:text="A2"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+                    <Button
+                        android:id="@+id/A3"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp"
+                        android:background="#008000"
+                        android:text="A3"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/A4"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp"
+                        android:background="#008000"
+                        android:text="A4"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/A5"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_row="0"
+                        android:layout_column="4"
+                        android:layout_margin="4dp"
+                        android:background="#008000"
+                        android:text="A5"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+                    <Button
+                        android:id="@+id/B1"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp"
+                        android:background="#008000"
+                        android:text="B1"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+                    <Button
+                        android:id="@+id/B2"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp"
+                        android:background="#008000"
+                        android:text="B2"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+                    <Button
+                        android:id="@+id/B3"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp"
+                        android:background="#008000"
+                        android:text="B3"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+                    <Button
+                        android:id="@+id/B4"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp"
+                        android:background="#008000"
+                        android:text="B4"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+                    <Button
+                        android:id="@+id/B5"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp"
+                        android:background="#008000"
+                        android:text="B5"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+                    <!-- Repeat for all other seats -->
+                </GridLayout>
+            </LinearLayout>
+
+            <!-- Seats Information (Selected and Total Price) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E3E3E3"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/selectedSeats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selected Seats: "
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/totalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Price: RM0"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Proceed Button at the Bottom -->
+    <Button
+        android:id="@+id/proceedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#4CAF50"
+        android:text="Proceed"
+        android:textColor="#263238"
+        android:textSize="18sp" />
+
+</LinearLayout>
