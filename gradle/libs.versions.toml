@@ -3,6 +3,7 @@ agp = "8.7.3"
 appcompat = "1.6.1"
 comGoogleAndroidGmsPlayServicesAuth = "20.7.0"
 comGoogleAndroidGmsPlayServicesAuth2 = "20.6.0"
+constraintlayout = "2.2.0"
 dotsindicator = "4.2"
 firebaseAuthKtx = "23.1.0"
 firebaseBom = "33.7.0"
@@ -19,14 +20,19 @@ kotlinStdlib = "2.0.0"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
 composeBom = "2024.04.01"
+material = "1.3.0-alpha03"
 playServicesAuth = "21.3.0"
 firebaseAuth = "23.1.0"
 playServicesAuthVersion = "20.4.0"
 ui = "1.7.6"
 viewpager = "1.1.0"
+viewpager2 = "1.1.0"
+recyclerview = "1.3.2"
+viewpagerdotsindicator = "4.3"
 
 [libraries]
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-viewpager = { module = "androidx.viewpager:viewpager", version.ref = "viewpager" }
 dotsindicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsindicator" }
@@ -49,6 +55,7 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlib" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 play-services-auth-v2020 = { module = "com.google.android.gms:play-services-auth", version.ref = "googlePlayServicesAuthVersion" }
@@ -57,6 +64,9 @@ play-services-auth-v2050 = { module = "com.google.android.gms:play-services-auth
 play-services-auth-v2060 = { module = "com.google.android.gms:play-services-auth", version.ref = "comGoogleAndroidGmsPlayServicesAuth2" }
 play-services-auth-v2070 = { module = "com.google.android.gms:play-services-auth", version.ref = "comGoogleAndroidGmsPlayServicesAuth" }
 ui = { module = "androidx.compose.ui:ui", version.ref = "ui" }
+androidx-viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager2" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+viewpagerdotsindicator = { module = "com.tbuonomo.andrui:viewpagerdotsindicator", version.ref = "viewpagerdotsindicator" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
