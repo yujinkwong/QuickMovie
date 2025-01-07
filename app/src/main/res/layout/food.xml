@@ -232,5 +232,5 @@
         android:textStyle="bold"
         android:gravity="center"
         android:padding="16dp"
-        android:background="#E0E0E0" />
+        android:background="#008000" />
 </LinearLayout>
