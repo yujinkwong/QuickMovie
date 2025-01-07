@@ -5,4 +5,7 @@
     <string name="default_web_client_id">292439689775-3givuej1sv9s4map6e1qt0vsuko91n0q.apps.googleusercontent.com</string>
     <string name="dashboard">Dashboard</string>
     <string name="carousel" />
+    <string name="settings">Settings</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
 </resources>

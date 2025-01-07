@@ -29,6 +29,7 @@ viewpager = "1.1.0"
 viewpager2 = "1.1.0"
 recyclerview = "1.3.2"
 viewpagerdotsindicator = "4.3"
+carUiLib = "2.6.0"
 
 [libraries]
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
@@ -67,6 +68,7 @@ ui = { module = "androidx.compose.ui:ui", version.ref = "ui" }
 androidx-viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager2" }
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 viewpagerdotsindicator = { module = "com.tbuonomo.andrui:viewpagerdotsindicator", version.ref = "viewpagerdotsindicator" }
+car-ui-lib = { group = "com.android.car.ui", name = "car-ui-lib", version.ref = "carUiLib" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
