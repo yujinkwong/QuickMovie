@@ -1,8 +1,10 @@
 package com.example.quickmovie
 
+import android.content.Intent // Add this import for Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.ImageButton // Add this import for ImageButton
 import androidx.activity.ComponentActivity
 import androidx.viewpager2.widget.ViewPager2
 
@@ -35,6 +37,12 @@ class DashboardActivity : ComponentActivity() {
 
         // Start auto-scroll
         startAutoScroll(images.size)
+
+        // Add Menu Button Click Listener
+        findViewById<ImageButton>(R.id.menubarprofile).setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun startAutoScroll(totalItems: Int) {

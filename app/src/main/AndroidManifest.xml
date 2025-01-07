@@ -24,6 +24,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".DashboardActivity" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".SeatSelectionActivity" />
     </application>
 
 </manifest>

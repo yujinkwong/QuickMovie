@@ -100,4 +100,5 @@ fun SignInScreenWithXML(onSignInButtonClick: () -> Unit) {
         },
         modifier = Modifier.fillMaxSize()
     )
+
 }
