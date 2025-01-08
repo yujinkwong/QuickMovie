@@ -2,9 +2,7 @@ package com.example.quickmovie
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 
@@ -23,7 +21,6 @@ class FoodActivity : ComponentActivity() {
     private lateinit var popcornQuantityTextView: TextView
     private lateinit var drinkQuantityTextView: TextView
     private lateinit var totalPriceTextView: TextView
-    private lateinit var menubarIcon: ImageView // To hold reference to menu icon
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +30,6 @@ class FoodActivity : ComponentActivity() {
         popcornQuantityTextView = findViewById(R.id.tv_quantity_popcorn)
         drinkQuantityTextView = findViewById(R.id.tv_quantity_drink)
         totalPriceTextView = findViewById(R.id.tv_total_price)
-        menubarIcon = findViewById(R.id.menubarfood) // Reference to menu icon (ImageView)
 
         // Set click listeners for Popcorn buttons
         findViewById<Button>(R.id.btn_add_popcorn).setOnClickListener {
@@ -53,9 +49,10 @@ class FoodActivity : ComponentActivity() {
             updateQuantity(false, "drink")
         }
 
-        // Set Menu button functionality to navigate to MenuActivity
-        menubarIcon.setOnClickListener {
-            val intent = Intent(this, MenuActivity::class.java)
+        // Set Total Price text functionality to navigate to PaymentActivity
+        totalPriceTextView.setOnClickListener {
+            val intent = Intent(this, PaymentActivity::class.java)
+            intent.putExtra("TOTAL_PRICE", totalPrice) // Pass total price to PaymentActivity
             startActivity(intent)
         }
     }

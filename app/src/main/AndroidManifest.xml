@@ -29,6 +29,7 @@
         <activity android:name=".AboutUsActivity" />
         <activity android:name=".FoodActivity" />
         <activity android:name=".SelectTimeActivity" />
+        <activity android:name=".PaymentActivity" />
 
     </application>
 
