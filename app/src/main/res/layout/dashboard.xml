@@ -16,7 +16,7 @@
 
         <!-- Menu Icon -->
         <ImageButton
-            android:id="@+id/menubarprofile"
+            android:id="@+id/menubardashboard"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/menubar"
@@ -74,6 +74,7 @@
 
             <!-- Movie 1 -->
             <LinearLayout
+                android:id="@+id/movie1Layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

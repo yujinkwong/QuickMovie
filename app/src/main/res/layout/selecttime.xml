@@ -1,5 +1,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -90,15 +91,16 @@
 
         <!-- Batu Pahat Location -->
         <LinearLayout
+            android:id="@+id/location_batu_pahat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp"
             android:layout_marginBottom="8dp"
             android:background="#F9F9F9"
             android:clickable="true"
             android:focusable="true"
-            android:id="@+id/location_batu_pahat">
+            android:orientation="horizontal"
+            android:padding="8dp"
+            tools:ignore="TouchTargetSizeCheck">
 
             <TextView
                 android:layout_width="0dp"
@@ -114,15 +116,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Choose Time"
-                android:textSize="14sp"
                 android:textColor="#FF5722"
+                android:textSize="14sp"
                 android:visibility="gone" />
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/arrow_down"
-                android:contentDescription="Arrow Down" />
+                android:contentDescription="Arrow Down"
+                android:src="@drawable/arrow_down" />
         </LinearLayout>
     </LinearLayout>
 
