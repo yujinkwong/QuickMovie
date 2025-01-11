@@ -20,11 +20,11 @@ class FoodActivity : ComponentActivity() {
     // Declare the views
     private lateinit var popcornQuantityTextView: TextView
     private lateinit var drinkQuantityTextView: TextView
-    private lateinit var totalPriceTextView: TextView
+    private lateinit var totalPriceTextView: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.food) // Ensure food.xml layout is correct
+        setContentView(R.layout.food) // Ensure food.xml layout is used
 
         // Initialize the views
         popcornQuantityTextView = findViewById(R.id.tv_quantity_popcorn)
@@ -35,7 +35,6 @@ class FoodActivity : ComponentActivity() {
         findViewById<Button>(R.id.btn_add_popcorn).setOnClickListener {
             updateQuantity(true, "popcorn")
         }
-
         findViewById<Button>(R.id.btn_minus_popcorn).setOnClickListener {
             updateQuantity(false, "popcorn")
         }
@@ -44,12 +43,11 @@ class FoodActivity : ComponentActivity() {
         findViewById<Button>(R.id.btn_add_drink).setOnClickListener {
             updateQuantity(true, "drink")
         }
-
         findViewById<Button>(R.id.btn_minus_drink).setOnClickListener {
             updateQuantity(false, "drink")
         }
 
-        // Set Total Price text functionality to navigate to PaymentActivity
+        // Set Total Price button functionality to navigate to PaymentActivity
         totalPriceTextView.setOnClickListener {
             val intent = Intent(this, PaymentActivity::class.java)
             intent.putExtra("TOTAL_PRICE", totalPrice) // Pass total price to PaymentActivity
