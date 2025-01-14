@@ -1,5 +1,7 @@
 package com.example.quickmovie
 
+import android.graphics.Bitmap
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -12,6 +14,12 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.EncodeHintType
+import com.google.zxing.MultiFormatWriter
+import com.google.zxing.common.BitMatrix
+import java.util.*
+
 
 class UserAccountActivity : ComponentActivity() {
 
@@ -57,7 +65,7 @@ class UserAccountActivity : ComponentActivity() {
                     userEmail.text = it.email
 
                     // Load booking history (if any)
-                    loadBookingHistory(user)
+                    loadBookingHistoryWithQR(user)
                 }
             }
 
@@ -67,8 +75,8 @@ class UserAccountActivity : ComponentActivity() {
         })
     }
 
-    private fun loadBookingHistory(user: FirebaseUser) {
-        val bookingHistoryRef = database.reference.child("bookingHistory").child(user.email?.replace(".", "_") ?: "unknown")
+    private fun loadBookingHistoryWithQR(user: FirebaseUser) {
+        val bookingHistoryRef = database.reference.child("users").child(user.email?.replace(".", "_") ?: "unknown").child("history")
         bookingHistoryRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 bookingHistoryContainer.removeAllViews()
@@ -77,9 +85,24 @@ class UserAccountActivity : ComponentActivity() {
                 if (dataSnapshot.exists()) {
                     for (bookingSnapshot in dataSnapshot.children) {
                         val booking = bookingSnapshot.getValue(Booking::class.java)
+                        val qrCodeData = bookingSnapshot.child("qr_code_data").value.toString()
+
                         booking?.let {
-                            val bookingItem = TextView(this@UserAccountActivity)
-                            bookingItem.text = "Movie: ${it.movieName}, Date: ${it.date}"
+                            val bookingItem = LinearLayout(this@UserAccountActivity)
+                            bookingItem.orientation = LinearLayout.VERTICAL
+
+                            // Movie details
+                            val bookingText = TextView(this@UserAccountActivity)
+                            bookingText.text = "Movie: ${it.movie}, Time: ${it.time}, Seats: ${it.seats}, Total Price: RM ${it.total_price}"
+
+                            // QR code ImageView
+                            val qrCodeImageView = ImageView(this@UserAccountActivity)
+                            val qrCodeBitmap = generateQRCode(qrCodeData)
+                            qrCodeImageView.setImageBitmap(qrCodeBitmap)
+
+                            // Add views to container
+                            bookingItem.addView(bookingText)
+                            bookingItem.addView(qrCodeImageView)
                             bookingHistoryContainer.addView(bookingItem)
                         }
                     }
@@ -99,11 +122,30 @@ class UserAccountActivity : ComponentActivity() {
     data class UserProfile(
         val name: String = "",
         val email: String = "",
-
     )
 
     data class Booking(
-        val movieName: String = "",
-        val date: String = ""
+        val movie: String = "",
+        val time: String = "",
+        val seats: String = "",
+        val total_price: Double = 0.0
     )
+
+    private fun generateQRCode(data: String): Bitmap {
+        val writer = MultiFormatWriter()
+        val hints = HashMap<EncodeHintType, Any>()
+        hints[EncodeHintType.MARGIN] = 1 // Optional: Set margin for QR code
+
+        val bitMatrix: BitMatrix = writer.encode(data, BarcodeFormat.QR_CODE, 200, 200, hints)
+        val width = bitMatrix.width
+        val height = bitMatrix.height
+        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+
+        for (x in 0 until width) {
+            for (y in 0 until height) {
+                bitmap.setPixel(x, y, if (bitMatrix[x, y]) Color.BLACK else Color.WHITE)
+            }
+        }
+        return bitmap
+    }
 }

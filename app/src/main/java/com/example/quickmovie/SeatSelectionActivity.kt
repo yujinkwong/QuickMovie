@@ -10,6 +10,10 @@ import androidx.core.content.ContextCompat
 
 class SeatSelectionActivity : ComponentActivity() {
 
+    private var selectedTime: String? = null
+    private var selectedMovie: String? = null
+    private var selectedLocation: String? = null
+
     private val seatPrice = 15.0 // Price for one seat
     private val selectedSeats = mutableListOf<String>() // List to store selected seats
 
@@ -23,7 +27,7 @@ class SeatSelectionActivity : ComponentActivity() {
         setContentView(R.layout.seat)
 
         // Retrieve data from the previous activity
-        val selectedTime = intent.getStringExtra("SELECTED_TIME") ?: "Unknown Time"
+        selectedTime = intent.getStringExtra("SELECTED_TIME") ?: "Unknown Time"
 
         // Initialize views
         selectedSeatsTextView = findViewById(R.id.selectedSeats)
@@ -40,15 +44,27 @@ class SeatSelectionActivity : ComponentActivity() {
         // Proceed to FoodActivity when proceed button is clicked
         proceedButton.setOnClickListener {
             if (selectedSeats.isNotEmpty()) {
+                // Retrieve the selected movie and location (assuming you have this data in the intent)
+                val selectedMovie = intent.getStringExtra("SELECTED_MOVIE") ?: "Unknown Movie"
+                val selectedLocation = intent.getStringExtra("SELECTED_LOCATION") ?: "Unknown Location"
+                val selectedTime = intent.getStringExtra("SELECTED_TIME") ?: "Unknown Time"
+
+                // Pass all the selected data to the PaymentActivity
                 val intent = Intent(this, FoodActivity::class.java)
+
+                intent.putExtra("SELECTED_MOVIE", selectedMovie)
+                intent.putExtra("SELECTED_LOCATION", selectedLocation)
                 intent.putExtra("SELECTED_TIME", selectedTime)
-                intent.putExtra("SELECTED_SEATS", selectedSeats.joinToString(", "))
+                intent.putExtra("SELECTED_SEATS", selectedSeats.joinToString(", ")) // Seats as a string
                 intent.putExtra("SEAT_TOTAL_PRICE", totalPrice)
+
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Please select at least one seat before proceeding.", Toast.LENGTH_SHORT).show()
             }
         }
+
+
     }
 
     // Handles seat button clicks

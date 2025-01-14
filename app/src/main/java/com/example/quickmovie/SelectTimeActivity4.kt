@@ -18,10 +18,15 @@ class SelectTimeActivity4 : ComponentActivity() {
     private lateinit var webView: WebView
 
     private var selectedTime: String? = null
+    private var selectedMovie: String? = null
+    private var selectedLocation: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.selecttime4)
+
+        selectedMovie = "WICKED"
+        selectedLocation = "NEARBY CINEMA"
 
         // Initialize buttons and WebView
         timeButton1 = findViewById(R.id.btn_10am)
@@ -46,7 +51,9 @@ class SelectTimeActivity4 : ComponentActivity() {
         // Proceed to seat selection
         proceedButton.setOnClickListener {
             if (selectedTime != null) {
-                val intent = Intent(this, SeatSelectionActivity::class.java)
+                val intent = Intent(this, SeatSelectionActivity4::class.java)
+                intent.putExtra("SELECTED_MOVIE", selectedMovie)
+                intent.putExtra("SELECTED_LOCATION", selectedLocation)
                 intent.putExtra("SELECTED_TIME", selectedTime)
                 startActivity(intent)
             } else {

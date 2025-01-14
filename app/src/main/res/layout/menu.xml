@@ -50,12 +50,33 @@
         android:text="Feedback"
         android:layout_marginBottom="16dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Live Chat With Us"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:paddingBottom="24dp" />
+
+    <ImageButton
+        android:id="@+id/messenger"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/messenger"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:contentDescription="Messenger"
+        android:onClick="openFacebook" />
+
+
     <!-- LogOut Button -->
     <Button
         android:id="@+id/menu_LogOut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Log Out"
-        android:layout_marginTop="300dp" />
+        android:layout_marginTop="200dp" />
 
 </LinearLayout>

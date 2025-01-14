@@ -40,7 +40,15 @@ class SeatSelectionActivity4 : ComponentActivity() {
         // Proceed to FoodActivity when proceed button is clicked
         proceedButton.setOnClickListener {
             if (selectedSeats.isNotEmpty()) {
+                // Retrieve data from the previous activity
+                val selectedTime = intent.getStringExtra("SELECTED_TIME") ?: "Unknown Time"
+                val selectedMovie = intent.getStringExtra("SELECTED_MOVIE") ?: "Unknown Movie"
+                val selectedLocation = intent.getStringExtra("SELECTED_LOCATION") ?: "Unknown Location"
+
+
                 val intent = Intent(this, FoodActivity::class.java)
+                intent.putExtra("SELECTED_MOVIE", selectedMovie)
+                intent.putExtra("SELECTED_LOCATION", selectedLocation)
                 intent.putExtra("SELECTED_TIME", selectedTime)
                 intent.putExtra("SELECTED_SEATS", selectedSeats.joinToString(", "))
                 intent.putExtra("SEAT_TOTAL_PRICE", totalPrice)

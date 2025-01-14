@@ -26,7 +26,10 @@ class FoodActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.food) // Ensure food.xml layout is used
 
-        // Get selected seats and seat price from the intent
+        // Get selected data from the intent
+        val selectedMovie = intent.getStringExtra("SELECTED_MOVIE") ?: "Unknown Movie"
+        val selectedLocation = intent.getStringExtra("SELECTED_LOCATION") ?: "Unknown Location"
+        val selectedTime = intent.getStringExtra("SELECTED_TIME") ?: "Unknown Time"
         val selectedSeats = intent.getStringExtra("SELECTED_SEATS") ?: ""
         val seatTotalPrice = intent.getDoubleExtra("SEAT_TOTAL_PRICE", 0.0)
 
@@ -62,6 +65,10 @@ class FoodActivity : ComponentActivity() {
         totalPriceButton.setOnClickListener {
             val finalTotalPrice = seatTotalPrice + foodTotalPrice
             val intent = Intent(this, PaymentActivity::class.java).apply {
+                // Pass all necessary data to PaymentActivity
+                putExtra("SELECTED_MOVIE", selectedMovie)
+                putExtra("SELECTED_LOCATION", selectedLocation)
+                putExtra("SELECTED_TIME", selectedTime)
                 putExtra("SELECTED_SEATS", selectedSeats)
                 putExtra("FINAL_TOTAL_PRICE", finalTotalPrice)
             }

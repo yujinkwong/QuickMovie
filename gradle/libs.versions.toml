@@ -4,6 +4,7 @@ appcompat = "1.7.0"
 comGoogleAndroidGmsPlayServicesAuth = "21.3.0"
 comGoogleAndroidGmsPlayServicesAuth2 = "21.3.0"
 constraintlayout = "2.2.0"
+core = "3.4.1"
 dotsindicator = "4.2"
 firebaseAuthKtx = "23.1.0"
 firebaseBom = "33.7.0"
@@ -36,10 +37,12 @@ carUiLib = "2.6.0"
 firebaseDatabaseKtx = "21.0.0"
 
 [libraries]
+android-core = { module = "com.google.zxing:android-core", version.ref = "core" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-viewpager = { module = "androidx.viewpager:viewpager", version.ref = "viewpager" }
+core = { module = "com.google.zxing:core", version.ref = "core" }
 dotsindicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsindicator" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
