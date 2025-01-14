@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.core.content.ContextCompat
 
-class SelectTimeActivity : ComponentActivity() {
+class SelectTimeActivity2 : ComponentActivity() {
 
     private lateinit var timeButton1: Button
     private lateinit var timeButton2: Button

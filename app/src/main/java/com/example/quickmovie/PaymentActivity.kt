@@ -2,8 +2,10 @@ package com.example.quickmovie
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 
 class PaymentActivity : ComponentActivity() {
@@ -27,28 +29,30 @@ class PaymentActivity : ComponentActivity() {
         paymentDetailsTextView.text = "Total Price: RM %.2f".format(finalTotalPrice)
 
         // Payment method buttons
-        tngButton.setOnClickListener {
-            navigateToReceipt(selectedSeats, finalTotalPrice, "TNG eWallet")
-        }
-        duitNowButton.setOnClickListener {
-            navigateToReceipt(selectedSeats, finalTotalPrice, "DuitNow")
-        }
-        creditCardButton.setOnClickListener {
-            navigateToReceipt(selectedSeats, finalTotalPrice, "Credit/Debit Card")
-        }
+        tngButton.setOnClickListener { handlePaymentMethod("TNG eWallet", selectedSeats, finalTotalPrice) }
+        duitNowButton.setOnClickListener { handlePaymentMethod("DuitNow", selectedSeats, finalTotalPrice) }
+        creditCardButton.setOnClickListener { handlePaymentMethod("Credit/Debit Card", selectedSeats, finalTotalPrice) }
 
-        // Back button to return to the previous page
-        backButton.setOnClickListener {
-            finish()
-        }
+        // Back button to return to FoodActivity
+        backButton.setOnClickListener { finish() }
     }
 
-    private fun navigateToReceipt(selectedSeats: String, totalPrice: Double, paymentMethod: String) {
-        // Navigate to ReceiptActivity
-        val intent = Intent(this, ReceiptActivity::class.java)
-        intent.putExtra("SELECTED_SEATS", selectedSeats)
-        intent.putExtra("FINAL_TOTAL_PRICE", totalPrice)
-        intent.putExtra("PAYMENT_METHOD", paymentMethod)
+    private fun handlePaymentMethod(method: String, seats: String, price: Double) {
+        // Show a Toast message for payment success
+        Toast.makeText(this, "Payment of RM %.2f with $method successful for seats: $seats".format(price), Toast.LENGTH_LONG).show()
+
+        // Wait for a brief moment before navigating back to the DashboardActivity
+        Handler().postDelayed({
+            navigateToDashboard()  // Redirect to the DashboardActivity
+        }, 2000) // Wait for 2 seconds before navigating
+    }
+
+    private fun navigateToDashboard() {
+        // Intent to navigate back to DashboardActivity
+        val intent = Intent(this, DashboardActivity::class.java)
         startActivity(intent)
+
+        // Close PaymentActivity so it is no longer in the activity stack
+        finish()
     }
 }

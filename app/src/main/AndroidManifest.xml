@@ -30,6 +30,7 @@
         <activity android:name=".FoodActivity" />
         <activity android:name=".SelectTimeActivity" />
         <activity android:name=".PaymentActivity" />
+        <activity android:name=".SelectTimeActivity2" />
 
     </application>
 
