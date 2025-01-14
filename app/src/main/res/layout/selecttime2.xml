@@ -1,4 +1,5 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,21 +9,21 @@
         android:id="@+id/topbardetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D3D3D3"
-        android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="8dp">
+        android:background="#D3D3D3"
+        android:padding="8dp"
+        android:gravity="center_vertical">
 
         <!-- Profile Title -->
         <TextView
             android:id="@+id/aboutus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="DETAILS"
-            android:textColor="#000000"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#000000" />
     </LinearLayout>
 
     <!-- Movie Details Section -->
@@ -49,7 +50,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="8dp"
             android:paddingBottom="4dp"
-            android:text="Venom: Let There Be Carnage"
+            android:text="SONIC THE HEDGEHOG 3"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -58,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="4dp"
-            android:text="18+ | Action, Drama | 1h 37m | English"
+            android:text="Action | 1h 50m | English"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -66,11 +67,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E3E3E3"
-        android:padding="8dp"
         android:text="Choose Location"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:background="#E3E3E3" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -121,11 +122,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E3E3E3"
-        android:padding="8dp"
         android:text="Choose Time"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:background="#E3E3E3" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -139,8 +140,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="8dp"
-            android:text="10:00 AM" />
+            android:text="10:00 AM"
+            android:padding="8dp" />
 
         <!-- Time 2 -->
         <Button
@@ -148,8 +149,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="8dp"
-            android:text="12:00 PM" />
+            android:text="12:00 PM"
+            android:padding="8dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -164,8 +165,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="8dp"
-            android:text="3:00 PM" />
+            android:text="3:00 PM"
+            android:padding="8dp" />
 
         <!-- Time 4 -->
         <Button
@@ -173,8 +174,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="8dp"
-            android:text="5:00 PM" />
+            android:text="5:00 PM"
+            android:padding="8dp" />
     </LinearLayout>
 
     <Button
@@ -182,8 +183,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginTop="60dp"
         android:background="#4CAF50"
+        android:layout_marginTop="60dp"
         android:text="Proceed"
         android:textColor="#263238"
         android:textSize="18sp" />

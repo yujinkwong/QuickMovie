@@ -9,8 +9,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.core.content.ContextCompat
 
-class SelectTimeActivity : ComponentActivity() {
-
+class SelectTimeActivity4 : ComponentActivity() {
     private lateinit var timeButton1: Button
     private lateinit var timeButton2: Button
     private lateinit var timeButton3: Button
@@ -22,7 +21,7 @@ class SelectTimeActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.selecttime)
+        setContentView(R.layout.selecttime4)
 
         // Initialize buttons and WebView
         timeButton1 = findViewById(R.id.btn_10am)
@@ -33,7 +32,7 @@ class SelectTimeActivity : ComponentActivity() {
         webView = findViewById(R.id.moviePoster)
 
         // Set up the WebView to load YouTube video
-        val youtubeUrl = "https://www.youtube.com/embed/-FmWuCgJmxo"
+        val youtubeUrl = "https://www.youtube.com/embed/6COmYeLsz4c"
         val webSettings: WebSettings = webView.settings
         webSettings.javaScriptEnabled = true
         webView.loadUrl(youtubeUrl)
