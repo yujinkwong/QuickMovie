@@ -1,12 +1,13 @@
 package com.example.quickmovie
 
-import android.content.Intent // Add this import for Intent
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.widget.ImageButton // Add this import for ImageButton
+import android.widget.ImageButton
 import androidx.activity.ComponentActivity
 import androidx.viewpager2.widget.ViewPager2
+import android.view.View
 
 class DashboardActivity : ComponentActivity() {
 
@@ -39,8 +40,15 @@ class DashboardActivity : ComponentActivity() {
         startAutoScroll(images.size)
 
         // Add Menu Button Click Listener
-        findViewById<ImageButton>(R.id.menubarprofile).setOnClickListener {
+        findViewById<ImageButton>(R.id.menubardashboard).setOnClickListener {
             val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Add click listener for Movie 1
+        val movie1Layout = findViewById<View>(R.id.movie1Layout)
+        movie1Layout.setOnClickListener {
+            val intent = Intent(this, SelectTimeActivity::class.java) // Replace with your target activity
             startActivity(intent)
         }
     }

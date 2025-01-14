@@ -1,0 +1,192 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/topbardetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#D3D3D3"
+        android:padding="8dp"
+        android:gravity="center_vertical">
+
+        <!-- Menu Icon -->
+
+        <!-- Profile Title -->
+        <TextView
+            android:id="@+id/aboutus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DETAILS"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <!-- Movie Details Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#E3E3E3"
+        android:padding="8dp">
+
+        <!-- Movie Poster -->
+        <ImageView
+            android:id="@+id/moviePoster"
+            android:layout_width="match_parent"
+            android:layout_height="182dp"
+            android:src="@drawable/venomposter"
+            android:scaleType="centerCrop"
+            android:contentDescription="Movie Poster" />
+
+        <!-- Movie Details -->
+        <TextView
+            android:id="@+id/movieName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Venom: Let There Be Carnage"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp" />
+
+        <TextView
+            android:id="@+id/movieDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="18+ | Action, Drama | 1h 37m | English"
+            android:textSize="14sp"
+            android:paddingBottom="4dp" />
+    </LinearLayout>
+
+    <!-- Location Section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Location"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:background="#E3E3E3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Batu Pahat Location -->
+        <LinearLayout
+            android:id="@+id/location_batu_pahat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="#F9F9F9"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            tools:ignore="TouchTargetSizeCheck">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batu Pahat"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Show selected time here -->
+            <TextView
+                android:id="@+id/selected_time_batu_pahat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose Time"
+                android:textColor="#FF5722"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Arrow Down"
+                android:src="@drawable/arrow_down" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Time Section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Time"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:background="#E3E3E3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Time 1 -->
+        <Button
+            android:id="@+id/btn_10am"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="10:00 AM"
+            android:padding="8dp" />
+
+        <!-- Time 2 -->
+        <Button
+            android:id="@+id/btn_12pm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="12:00 PM"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Time 3 -->
+        <Button
+            android:id="@+id/btn_3pm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3:00 PM"
+            android:padding="8dp" />
+
+        <!-- Time 4 -->
+        <Button
+            android:id="@+id/btn_5pm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="5:00 PM"
+            android:padding="8dp" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/proceedButton1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#4CAF50"
+        android:layout_marginTop="60dp"
+        android:text="Proceed"
+        android:textColor="#263238"
+        android:textSize="18sp" />
+</LinearLayout>

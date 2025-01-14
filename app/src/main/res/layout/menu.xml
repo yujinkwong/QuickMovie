@@ -28,10 +28,26 @@
 
     <!-- Profile Button -->
     <Button
-        android:id="@+id/menu_Profile"
+        android:id="@+id/menu_Detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profile"
+        android:text="Detail"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Profile Button -->
+    <Button
+        android:id="@+id/menu_Seat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seat"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Profile Button -->
+    <Button
+        android:id="@+id/menu_Food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Food"
         android:layout_marginBottom="16dp" />
 
     <!-- Settings Button -->
@@ -39,7 +55,7 @@
         android:id="@+id/menu_AboutUs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="AboutUs"
+        android:text="About Us"
         android:layout_marginBottom="16dp" />
 
 </LinearLayout>

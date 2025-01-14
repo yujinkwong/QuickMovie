@@ -23,15 +23,7 @@
                 android:background="#D3D3D3"
                 android:padding="8dp">
 
-                <!-- Menu Icon -->
-                <ImageButton
-                    android:id="@+id/menubarfood"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/back"
-                    android:scaleType="fitXY"
-                    android:contentDescription="Menu Icon"
-                    android:layout_gravity="center_vertical" />
+
 
                 <!-- Title -->
                 <TextView
@@ -87,7 +79,7 @@
                     android:id="@+id/seatDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1 Seat: RM xx"
+                    android:text="1 Seat: RM 15"
                     android:textSize="14sp"
                     android:textStyle="italic"
                     android:textColor="#333333" />
