@@ -12,45 +12,59 @@ class FoodActivity : ComponentActivity() {
     private val popcornPrice = 5.00
     private val drinkPrice = 2.50
 
-    // Declare the variables for quantity and total price
+    // Declare variables for quantities and total prices
     private var popcornQuantity = 0
     private var drinkQuantity = 0
-    private var totalPrice = 0.00
+    private var foodTotalPrice = 0.00
 
-    // Declare the views
+    // Declare views
     private lateinit var popcornQuantityTextView: TextView
     private lateinit var drinkQuantityTextView: TextView
-    private lateinit var totalPriceTextView: Button
+    private lateinit var totalPriceButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.food) // Ensure food.xml layout is used
 
-        // Initialize the views
+        // Get selected seats and seat price from the intent
+        val selectedSeats = intent.getStringExtra("SELECTED_SEATS") ?: ""
+        val seatTotalPrice = intent.getDoubleExtra("SEAT_TOTAL_PRICE", 0.0)
+
+        // Initialize views
         popcornQuantityTextView = findViewById(R.id.tv_quantity_popcorn)
         drinkQuantityTextView = findViewById(R.id.tv_quantity_drink)
-        totalPriceTextView = findViewById(R.id.tv_total_price)
+        totalPriceButton = findViewById(R.id.tv_total_price)
 
-        // Set click listeners for Popcorn buttons
+        // Update total price button initially
+        updateTotalPrice(seatTotalPrice)
+
+        // Set click listeners for popcorn buttons
         findViewById<Button>(R.id.btn_add_popcorn).setOnClickListener {
-            updateQuantity(true, "popcorn")
+            updateQuantity(isAdding = true, item = "popcorn")
+            updateTotalPrice(seatTotalPrice)
         }
         findViewById<Button>(R.id.btn_minus_popcorn).setOnClickListener {
-            updateQuantity(false, "popcorn")
+            updateQuantity(isAdding = false, item = "popcorn")
+            updateTotalPrice(seatTotalPrice)
         }
 
-        // Set click listeners for Drink buttons
+        // Set click listeners for drink buttons
         findViewById<Button>(R.id.btn_add_drink).setOnClickListener {
-            updateQuantity(true, "drink")
+            updateQuantity(isAdding = true, item = "drink")
+            updateTotalPrice(seatTotalPrice)
         }
         findViewById<Button>(R.id.btn_minus_drink).setOnClickListener {
-            updateQuantity(false, "drink")
+            updateQuantity(isAdding = false, item = "drink")
+            updateTotalPrice(seatTotalPrice)
         }
 
-        // Set Total Price button functionality to navigate to PaymentActivity
-        totalPriceTextView.setOnClickListener {
-            val intent = Intent(this, PaymentActivity::class.java)
-            intent.putExtra("TOTAL_PRICE", totalPrice) // Pass total price to PaymentActivity
+        // Set up total price button to navigate to PaymentActivity
+        totalPriceButton.setOnClickListener {
+            val finalTotalPrice = seatTotalPrice + foodTotalPrice
+            val intent = Intent(this, PaymentActivity::class.java).apply {
+                putExtra("SELECTED_SEATS", selectedSeats)
+                putExtra("FINAL_TOTAL_PRICE", finalTotalPrice)
+            }
             startActivity(intent)
         }
     }
@@ -59,25 +73,20 @@ class FoodActivity : ComponentActivity() {
     private fun updateQuantity(isAdding: Boolean, item: String) {
         when (item) {
             "popcorn" -> {
-                if (isAdding) {
-                    popcornQuantity++
-                } else if (popcornQuantity > 0) {
-                    popcornQuantity--
-                }
+                if (isAdding) popcornQuantity++ else if (popcornQuantity > 0) popcornQuantity--
                 popcornQuantityTextView.text = popcornQuantity.toString()
             }
             "drink" -> {
-                if (isAdding) {
-                    drinkQuantity++
-                } else if (drinkQuantity > 0) {
-                    drinkQuantity--
-                }
+                if (isAdding) drinkQuantity++ else if (drinkQuantity > 0) drinkQuantity--
                 drinkQuantityTextView.text = drinkQuantity.toString()
             }
         }
+        foodTotalPrice = (popcornQuantity * popcornPrice) + (drinkQuantity * drinkPrice)
+    }
 
-        // Recalculate total price
-        totalPrice = (popcornQuantity * popcornPrice) + (drinkQuantity * drinkPrice)
-        totalPriceTextView.text = "Total Price: RM %.2f".format(totalPrice)
+    // Method to update the total price displayed on the button
+    private fun updateTotalPrice(seatTotalPrice: Double) {
+        val finalPrice = seatTotalPrice + foodTotalPrice
+        totalPriceButton.text = "Total Price: RM %.2f".format(finalPrice)
     }
 }

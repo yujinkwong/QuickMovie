@@ -15,13 +15,13 @@ class SelectTimeActivity : ComponentActivity() {
     private lateinit var timeButton4: Button
     private lateinit var proceedButton: Button
 
-    private var selectedTimeButton: Button? = null
+    private var selectedTime: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.selecttime)
 
-        // Initialize time buttons
+        // Initialize buttons
         timeButton1 = findViewById(R.id.btn_10am)
         timeButton2 = findViewById(R.id.btn_3pm)
         timeButton3 = findViewById(R.id.btn_5pm)
@@ -29,38 +29,31 @@ class SelectTimeActivity : ComponentActivity() {
         proceedButton = findViewById(R.id.proceedButton1)
 
         // Set click listeners for time buttons
-        timeButton1.setOnClickListener { onTimeButtonClicked(timeButton1) }
-        timeButton2.setOnClickListener { onTimeButtonClicked(timeButton2) }
-        timeButton3.setOnClickListener { onTimeButtonClicked(timeButton3) }
-        timeButton4.setOnClickListener { onTimeButtonClicked(timeButton4) }
+        timeButton1.setOnClickListener { selectTime("10:00 AM", timeButton1) }
+        timeButton2.setOnClickListener { selectTime("3:00 PM", timeButton2) }
+        timeButton3.setOnClickListener { selectTime("5:00 PM", timeButton3) }
+        timeButton4.setOnClickListener { selectTime("12:00 PM", timeButton4) }
 
-        // Set click listener for the proceed button
+        // Proceed to seat selection
         proceedButton.setOnClickListener {
-            if (selectedTimeButton != null) {
-                // Navigate to the Food page
-                val intent = Intent(this, FoodActivity::class.java)
+            if (selectedTime != null) {
+                val intent = Intent(this, SeatSelectionActivity::class.java)
+                intent.putExtra("SELECTED_TIME", selectedTime)
                 startActivity(intent)
             } else {
-                // Show a message if no time is selected
                 Toast.makeText(this, "Please select a time before proceeding.", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun onTimeButtonClicked(clickedButton: Button) {
-        if (clickedButton == selectedTimeButton) {
-            return
-        }
-
-        // Reset the previously selected button, if any
-        selectedTimeButton?.let {
+    private fun selectTime(time: String, button: Button) {
+        // Reset previously selected button
+        listOf(timeButton1, timeButton2, timeButton3, timeButton4).forEach {
             it.setBackgroundColor(ContextCompat.getColor(this, android.R.color.darker_gray))
         }
 
-        // Highlight the selected button
-        clickedButton.setBackgroundColor(ContextCompat.getColor(this, android.R.color.holo_green_dark))
-
-        // Update the currently selected button
-        selectedTimeButton = clickedButton
+        // Highlight the selected button and update the selected time
+        button.setBackgroundColor(ContextCompat.getColor(this, android.R.color.holo_green_dark))
+        selectedTime = time
     }
 }
