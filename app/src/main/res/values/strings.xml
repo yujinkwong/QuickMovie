@@ -11,5 +11,6 @@
     <string name="menu">Menu</string>
     <string name="about">About</string>
     <string name="food">Food</string>
-    <string name="live_chat">Live Chat</string>
+    <string name="name">User Name</string>
+    <string name="email">user@example.com</string>
 </resources>
