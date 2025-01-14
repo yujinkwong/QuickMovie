@@ -28,26 +28,10 @@
 
     <!-- Profile Button -->
     <Button
-        android:id="@+id/menu_Detail"
+        android:id="@+id/menu_Profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Detail"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Profile Button -->
-    <Button
-        android:id="@+id/menu_Seat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Seat"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Profile Button -->
-    <Button
-        android:id="@+id/menu_Food"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Food"
+        android:text="My Account"
         android:layout_marginBottom="16dp" />
 
     <!-- Settings Button -->
@@ -57,5 +41,21 @@
         android:layout_height="wrap_content"
         android:text="About Us"
         android:layout_marginBottom="16dp" />
+
+    <!-- Feedback Button -->
+    <Button
+        android:id="@+id/menu_Feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Feedback"
+        android:layout_marginBottom="16dp" />
+
+    <!-- LogOut Button -->
+    <Button
+        android:id="@+id/menu_LogOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:layout_marginTop="300dp" />
 
 </LinearLayout>

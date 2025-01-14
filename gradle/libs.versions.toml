@@ -7,6 +7,7 @@ constraintlayout = "2.2.0"
 dotsindicator = "4.2"
 firebaseAuthKtx = "23.1.0"
 firebaseBom = "33.7.0"
+glide = "4.12.0"
 googlePlayServicesAuth = "20.5.0"
 googlePlayServicesAuthVersion = "20.2.0"
 googleServices = "4.4.2"
@@ -24,12 +25,15 @@ material = "1.12.0"
 playServicesAuth = "21.3.0"
 firebaseAuth = "23.1.0"
 playServicesAuthVersion = "20.4.0"
+playServicesMaps = "18.1.0"
+playServicesLocation = "21.0.1"
 ui = "1.7.6"
 viewpager = "1.1.0"
 viewpager2 = "1.1.0"
 recyclerview = "1.3.2"
 viewpagerdotsindicator = "4.3"
 carUiLib = "2.6.0"
+firebaseDatabaseKtx = "21.0.0"
 
 [libraries]
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
@@ -40,6 +44,7 @@ dotsindicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsindi
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
 google-services-v4315 = { module = "com.google.gms:google-services", version.ref = "googleServicesVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -64,11 +69,14 @@ play-services-auth-v2040 = { module = "com.google.android.gms:play-services-auth
 play-services-auth-v2050 = { module = "com.google.android.gms:play-services-auth", version.ref = "googlePlayServicesAuth" }
 play-services-auth-v2060 = { module = "com.google.android.gms:play-services-auth", version.ref = "comGoogleAndroidGmsPlayServicesAuth2" }
 play-services-auth-v2070 = { module = "com.google.android.gms:play-services-auth", version.ref = "comGoogleAndroidGmsPlayServicesAuth" }
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
+play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
 ui = { module = "androidx.compose.ui:ui", version.ref = "ui" }
 androidx-viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager2" }
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 viewpagerdotsindicator = { module = "com.tbuonomo.andrui:viewpagerdotsindicator", version.ref = "viewpagerdotsindicator" }
 car-ui-lib = { group = "com.android.car.ui", name = "car-ui-lib", version.ref = "carUiLib" }
+firebase-database-ktx = { group = "com.google.firebase", name = "firebase-database-ktx", version.ref = "firebaseDatabaseKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

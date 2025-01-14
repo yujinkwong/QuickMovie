@@ -2,6 +2,7 @@
 package com.example.quickmovie
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -22,14 +23,21 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : ComponentActivity() {
 
     private lateinit var googleSignInClient: GoogleSignInClient
     private val firebaseAuth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Initialize Firebase Realtime Database
+        database = FirebaseDatabase.getInstance("https://quickmovie-490e5-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
 
         // Initialize Google Sign-In options
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -75,6 +83,12 @@ class MainActivity : ComponentActivity() {
                     Toast.makeText(this, "Sign-In Successful: ${user?.email}", Toast.LENGTH_SHORT).show()
                     Log.d("MainActivity", "Firebase Sign-In successful: ${user?.email}")
 
+                    // Store user data in Firebase Realtime Database
+                    storeUserDataInDatabase(user)
+
+                    // Play success audio
+                    playSuccessAudio()
+
                     // After successful sign-in, navigate to DashboardActivity
                     val intent = Intent(this, DashboardActivity::class.java)
                     startActivity(intent)
@@ -85,6 +99,43 @@ class MainActivity : ComponentActivity() {
                 }
             }
     }
+
+    private fun storeUserDataInDatabase(user: FirebaseUser?) {
+        user?.let {
+            // Use the email (with '.' replaced by '_') as the user key
+            val userRef = database.child("users").child(user.email?.replace(".", "_") ?: "unknown")
+
+            // Check if the user data already exists
+            userRef.get().addOnSuccessListener { snapshot ->
+                if (snapshot.exists()) {
+                    // Data already exists, no need to save again
+                    Log.d("MainActivity", "User data already exists. No need to save.")
+                } else {
+                    // Data does not exist, save the user data
+                    val userData = mapOf(
+                        "name" to user.displayName,
+                        "email" to user.email,
+                    )
+                    userRef.setValue(userData)
+                        .addOnSuccessListener {
+                            Log.d("MainActivity", "User data saved successfully.")
+                        }
+                        .addOnFailureListener { e ->
+                            Log.e("MainActivity", "Error saving user data", e)
+                        }
+                }
+            }
+        }
+    }
+
+    private fun playSuccessAudio() {
+        val mediaPlayer = MediaPlayer.create(this, R.raw.login_success) // Use your audio file name
+        mediaPlayer.start()
+        mediaPlayer.setOnCompletionListener {
+            it.release() // Release resources after playback
+        }
+    }
+
 }
 
 @Composable
@@ -100,5 +151,4 @@ fun SignInScreenWithXML(onSignInButtonClick: () -> Unit) {
         },
         modifier = Modifier.fillMaxSize()
     )
-
 }
