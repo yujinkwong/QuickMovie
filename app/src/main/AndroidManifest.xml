@@ -27,13 +27,19 @@
         </activity>
         <activity android:name=".DashboardActivity" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".SeatSelectionActivity" />
         <activity android:name=".AboutUsActivity" />
         <activity android:name=".FoodActivity" />
-        <activity android:name=".SelectTimeActivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".UserAccountActivity" />
         <activity android:name=".FeedbackActivity" />
+        <activity android:name=".SeatSelectionActivity" />
+        <activity android:name=".SeatSelectionActivity2" />
+        <activity android:name=".SeatSelectionActivity3" />
+        <activity android:name=".SeatSelectionActivity4" />
+        <activity android:name=".SelectTimeActivity" />
+        <activity android:name=".SelectTimeActivity2" />
+        <activity android:name=".SelectTimeActivity3" />
+        <activity android:name=".SelectTimeActivity4" />
     </application>
 
 </manifest>

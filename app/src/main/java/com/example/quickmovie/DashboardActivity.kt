@@ -19,6 +19,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import java.util.*
+import android.view.View
 
 class DashboardActivity : ComponentActivity() {
 
@@ -74,6 +75,13 @@ class DashboardActivity : ComponentActivity() {
         findViewById<ImageButton>(R.id.menubardashboard).setOnClickListener {
             // Handle navigation to the menu
             startActivity(Intent(this, MenuActivity::class.java))
+        }
+
+        // Add click listener for Movie 1
+        val movie1Layout = findViewById<View>(R.id.movie1Layout)
+        movie1Layout.setOnClickListener {
+            val intent = Intent(this, SelectTimeActivity::class.java) // Replace with your target activity
+            startActivity(intent)
         }
 
         // Add click listener for Movie 2
