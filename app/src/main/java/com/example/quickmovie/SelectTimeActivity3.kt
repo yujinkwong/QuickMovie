@@ -22,7 +22,7 @@ class SelectTimeActivity3 : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.selecttime)
+        setContentView(R.layout.selecttime3)
 
         // Initialize buttons and WebView
         timeButton1 = findViewById(R.id.btn_10am)
@@ -33,7 +33,7 @@ class SelectTimeActivity3 : ComponentActivity() {
         webView = findViewById(R.id.moviePoster)
 
         // Set up the WebView to load YouTube video
-        val youtubeUrl = "https://www.youtube.com/embed/-FmWuCgJmxo"
+        val youtubeUrl = "https://www.youtube.com/embed/CBc2r3uhtmg"
         val webSettings: WebSettings = webView.settings
         webSettings.javaScriptEnabled = true
         webView.loadUrl(youtubeUrl)

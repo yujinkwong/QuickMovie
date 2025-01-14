@@ -63,7 +63,7 @@ class DashboardActivity : ComponentActivity() {
         // Add click listener for Movie 3
         val movie3Layout = findViewById<View>(R.id.movie3Layout)
         movie3Layout.setOnClickListener {
-            val intent = Intent(this, SelectTimeActivity::class.java) // Replace with your target activity
+            val intent = Intent(this, SelectTimeActivity3::class.java) // Replace with your target activity
             intent.putExtra("MOVIE_NAME", "CRAYON SINCHAN: DINOSAUR DIARY")
             startActivity(intent)
         }
