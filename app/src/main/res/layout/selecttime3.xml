@@ -178,12 +178,16 @@
             android:padding="8dp" />
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
     <Button
         android:id="@+id/proceedButton1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginTop="240dp"
         android:background="#4CAF50"
         android:text="Proceed"
         android:textColor="#263238"
