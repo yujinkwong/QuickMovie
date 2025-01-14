@@ -47,7 +47,7 @@ class SelectTimeActivity3 : ComponentActivity() {
         // Proceed to seat selection
         proceedButton.setOnClickListener {
             if (selectedTime != null) {
-                val intent = Intent(this, SeatSelectionActivity::class.java)
+                val intent = Intent(this, SeatSelectionActivity3::class.java)
                 intent.putExtra("SELECTED_TIME", selectedTime)
                 startActivity(intent)
             } else {

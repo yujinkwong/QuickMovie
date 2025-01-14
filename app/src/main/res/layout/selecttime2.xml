@@ -38,7 +38,7 @@
         <WebView
             android:id="@+id/moviePoster"
             android:layout_width="match_parent"
-            android:layout_height="182dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             android:background="@android:color/black"
             android:contentDescription="YouTube Video" />
@@ -183,8 +183,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:layout_marginTop="240dp"
         android:background="#4CAF50"
-        android:layout_marginTop="60dp"
         android:text="Proceed"
         android:textColor="#263238"
         android:textSize="18sp" />

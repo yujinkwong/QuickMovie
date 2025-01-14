@@ -115,15 +115,7 @@
                 android:contentDescription="Facebook"
                 android:onClick="openFacebook" /> <!-- Add onClick attribute -->
 
-            <ImageButton
-                android:id="@+id/socialmedia2"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/insta"
-                android:scaleType="fitXY"
-                android:background="@null"
-                android:contentDescription="Instagram"
-                android:onClick="openInstagram" /> <!-- Add onClick attribute -->
+            <!-- Add onClick attribute -->
 
         </LinearLayout>
 

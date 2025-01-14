@@ -2,7 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <LinearLayout
@@ -38,14 +38,14 @@
         <WebView
             android:id="@+id/moviePoster"
             android:layout_width="match_parent"
-            android:layout_height="182dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             android:background="@android:color/black"
             android:contentDescription="YouTube Video" />
 
         <!-- Movie Details -->
         <TextView
-            android:id="@+id/movieName2"
+            android:id="@+id/movieName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="8dp"
@@ -55,7 +55,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/movieDetails2"
+            android:id="@+id/movieDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="4dp"
@@ -183,8 +183,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:layout_marginTop="240dp"
         android:background="#4CAF50"
-        android:layout_marginTop="60dp"
         android:text="Proceed"
         android:textColor="#263238"
         android:textSize="18sp" />
