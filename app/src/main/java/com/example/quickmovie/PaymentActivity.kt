@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 
 class PaymentActivity : ComponentActivity() {
@@ -13,7 +12,7 @@ class PaymentActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.paymentoption)
 
-        // Retrieve data from FoodActivity
+        // Retrieve data from the previous activity
         val selectedSeats = intent.getStringExtra("SELECTED_SEATS") ?: "No seats selected"
         val finalTotalPrice = intent.getDoubleExtra("FINAL_TOTAL_PRICE", 0.0)
 
@@ -29,30 +28,27 @@ class PaymentActivity : ComponentActivity() {
 
         // Payment method buttons
         tngButton.setOnClickListener {
-            handlePaymentMethod("TNG eWallet", selectedSeats, finalTotalPrice)
+            navigateToReceipt(selectedSeats, finalTotalPrice, "TNG eWallet")
         }
         duitNowButton.setOnClickListener {
-            handlePaymentMethod("DuitNow", selectedSeats, finalTotalPrice)
+            navigateToReceipt(selectedSeats, finalTotalPrice, "DuitNow")
         }
         creditCardButton.setOnClickListener {
-            handlePaymentMethod("Credit/Debit Card", selectedSeats, finalTotalPrice)
+            navigateToReceipt(selectedSeats, finalTotalPrice, "Credit/Debit Card")
         }
 
-        // Back button to return to FoodActivity
+        // Back button to return to the previous page
         backButton.setOnClickListener {
-            finish() // Ends the current activity and returns to the previous one
+            finish()
         }
     }
 
-    private fun handlePaymentMethod(method: String, seats: String, price: Double) {
-        // Example: Show a toast and simulate payment success
-        Toast.makeText(
-            this,
-            "Payment of RM %.2f with %s successful for seats: %s".format(price, method, seats),
-            Toast.LENGTH_LONG
-        ).show()
-
-        // Redirect to a success page or finish
-        finish() // Optionally, navigate to a new activity if needed
+    private fun navigateToReceipt(selectedSeats: String, totalPrice: Double, paymentMethod: String) {
+        // Navigate to ReceiptActivity
+        val intent = Intent(this, ReceiptActivity::class.java)
+        intent.putExtra("SELECTED_SEATS", selectedSeats)
+        intent.putExtra("FINAL_TOTAL_PRICE", totalPrice)
+        intent.putExtra("PAYMENT_METHOD", paymentMethod)
+        startActivity(intent)
     }
 }
