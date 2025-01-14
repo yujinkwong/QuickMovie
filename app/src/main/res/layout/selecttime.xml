@@ -14,8 +14,6 @@
         android:padding="8dp"
         android:gravity="center_vertical">
 
-        <!-- Menu Icon -->
-
         <!-- Profile Title -->
         <TextView
             android:id="@+id/aboutus"
@@ -31,38 +29,38 @@
     <!-- Movie Details Section -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="295dp"
         android:background="#E3E3E3"
+        android:orientation="vertical"
         android:padding="8dp">
 
-        <!-- Movie Poster -->
-        <ImageView
+        <!-- YouTube Video (WebView) -->
+        <WebView
             android:id="@+id/moviePoster"
             android:layout_width="match_parent"
             android:layout_height="182dp"
-            android:src="@drawable/venomposter"
-            android:scaleType="centerCrop"
-            android:contentDescription="Movie Poster" />
+            android:layout_gravity="center"
+            android:background="@android:color/black"
+            android:contentDescription="YouTube Video" />
 
         <!-- Movie Details -->
         <TextView
             android:id="@+id/movieName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp"
             android:text="Venom: Let There Be Carnage"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/movieDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
             android:text="18+ | Action, Drama | 1h 37m | English"
-            android:textSize="14sp"
-            android:paddingBottom="4dp" />
+            android:textSize="14sp" />
     </LinearLayout>
 
     <!-- Location Section -->
@@ -179,6 +177,7 @@
             android:text="5:00 PM"
             android:padding="8dp" />
     </LinearLayout>
+
     <Button
         android:id="@+id/proceedButton1"
         android:layout_width="match_parent"
