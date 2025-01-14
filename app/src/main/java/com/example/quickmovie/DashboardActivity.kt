@@ -75,6 +75,30 @@ class DashboardActivity : ComponentActivity() {
             // Handle navigation to the menu
             startActivity(Intent(this, MenuActivity::class.java))
         }
+
+        // Add click listener for Movie 2
+        val movie2Layout = findViewById<View>(R.id.movie2Layout)
+        movie2Layout.setOnClickListener {
+            val intent = Intent(this, SelectTimeActivity2::class.java) // Replace with your target activity
+            intent.putExtra("MOVIE_NAME", "SONIC THE HEDGEHOG 3")
+            startActivity(intent)
+        }
+
+        // Add click listener for Movie 3
+        val movie3Layout = findViewById<View>(R.id.movie3Layout)
+        movie3Layout.setOnClickListener {
+            val intent = Intent(this, SelectTimeActivity3::class.java) // Replace with your target activity
+            intent.putExtra("MOVIE_NAME", "CRAYON SINCHAN: DINOSAUR DIARY")
+            startActivity(intent)
+        }
+
+        // Add click listener for Movie 4
+        val movie4Layout = findViewById<View>(R.id.movie4Layout)
+        movie4Layout.setOnClickListener {
+            val intent = Intent(this, SelectTimeActivity4::class.java) // Replace with your target activity
+            intent.putExtra("MOVIE_NAME", "WICKED")
+            startActivity(intent)
+        }
     }
 
     private fun startAutoScroll(totalItems: Int) {

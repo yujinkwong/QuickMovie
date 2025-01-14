@@ -67,7 +67,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Now Showing"
+        android:text="Today Showing"
         android:textSize="18sp"
         android:padding="8dp"
         android:textStyle="bold"
@@ -129,6 +129,7 @@
 
             <!-- Movie 2 -->
             <LinearLayout
+                android:id="@+id/movie2Layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -171,6 +172,7 @@
 
             <!-- Movie 3 -->
             <LinearLayout
+                android:id="@+id/movie3Layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -213,6 +215,7 @@
 
             <!-- Movie 4 -->
             <LinearLayout
+                android:id="@+id/movie4Layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
