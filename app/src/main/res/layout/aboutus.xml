@@ -52,7 +52,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_app_logo" />
+            android:src="@drawable/ic_app" />
 
         <TextView
             android:id="@+id/overview"
